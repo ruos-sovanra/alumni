@@ -72,5 +72,5 @@ class AuthServiceImplTest {
         verify(tokenGenerator, times(1)).generateTokens(authentication);
     }
 
-    // Similar tests for refresh() and logout() methods
+
 }

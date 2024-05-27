@@ -149,6 +149,7 @@ public class ProfileDetailServiceImpl implements UserDetailService{
 
     @Override
     public void generateCSVReport(OutputStream out) {
+
         List<UserDetail> userDetails = userDetailRepository.findAll();
 
         try {
@@ -170,9 +171,10 @@ public class ProfileDetailServiceImpl implements UserDetailService{
 
             csvWriter.close();
 
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
 

@@ -2,7 +2,7 @@ spring:
   application:
     name: "ALUMNI"
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5432/testing
+    url: jdbc:postgresql://152.42.163.114:5435/alumni
     username: postgres
     password: qwerty
     driver-class-name: org.postgresql.Driver
@@ -10,7 +10,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
   servlet:
     multipart:
       max-file-size: 10MB
