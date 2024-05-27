@@ -1,0 +1,73 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.0'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    configureEach {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starters
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.4.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:3.2.4'
+
+    // Additional Libraries
+    implementation 'org.apache.poi:poi:5.2.5'
+    implementation 'org.apache.poi:poi-ooxml:5.2.2'
+    implementation 'org.apache.pdfbox:pdfbox:2.0.24'
+    implementation 'com.google.api-client:google-api-client:1.34.0'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.34.1'
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev20240419-2.0.0'
+    implementation 'com.opencsv:opencsv:5.5.2'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // MapStruct
+    implementation 'org.mapstruct:mapstruct:1.6.0.Beta1'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.0.Beta1'
+
+    // Database
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Dev Tools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Testing dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2' // Updated version
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2' // Updated version
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.12.4'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
