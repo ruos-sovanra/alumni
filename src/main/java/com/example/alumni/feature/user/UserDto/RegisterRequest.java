@@ -17,8 +17,6 @@ public record RegisterRequest(
         String email,
         @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$", message = "Password must be at least 8 characters and include at least one uppercase letter, one lowercase letter, one number, and one special character")
         String password,
-        String confirmPassword,
-        String phone,
-        String avatar
+        String confirmPassword
 ) {
 }
