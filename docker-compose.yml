@@ -10,3 +10,4 @@ services:
       - TZ=Asia/Bangkok
     ports:
       - '8282:8080'
+
