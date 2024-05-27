@@ -9,4 +9,4 @@ services:
     environment:
       - TZ=Asia/Bangkok
     ports:
-      - '8282:8080'   #follow you port
+      - '8282:8080'
