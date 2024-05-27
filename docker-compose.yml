@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  alumni_mock:
+    container_name: 'alumni_mock'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - TZ=Asia/Bangkok
+    ports:
+      - '8282:8080'   #follow you port

@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: "ALUMNI"
+  datasource:
+    url: jdbc:postgresql://152.42.163.114:5435/alumni
+    username: postgres
+    password: qwerty
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "vannraruos@gmail.com"
+    password: "klmcbchpzqszhlhz"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+file:
+  storage-dir: "filestorage/images/"
+  client-dir: "/images/**"
+  storage-dir1: "cvStorage/cv/"
+  client-dir1: "/cv/**"
+
+#this is for access token
+ACCESS_TOKEN_PRIVATE_KEY_PATH: keys/access-token-private.key
+ACCESS_TOKEN_PUBLIC_KEY_PATH: keys/access-token-public.key
+# This is for the refresh token
+REFRESH_TOKEN_PRIVATE_KEY_PATH: keys/refresh-token-private.key
+REFRESH_TOKEN_PUBLIC_KEY_PATH: keys/refresh-token-public.key
